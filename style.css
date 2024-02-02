@@ -33,16 +33,32 @@ h1 {
   font-size: 2rem;
   font-weight: 500;
 }
-@media screen and (min-width: 576px) {
+.section-heading {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2em;
 }
-@media screen and (min-width: 768px) {
+.aboutme_list {
 }
-@media screen and (min-width: 992px) {
+.aboutme_list > li {
+  margin-bottom: 2em;
+}
+.heading_2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+}
+.heading_3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.list_with_left_padding > li {
+  margin-left: 2em;
 }
 /* Scroll Watcher
 ==================*/
 .scroll-watcher {
-  height: 0.5em;
+  height: 6px;
   position: fixed;
   top: 0;
   z-index: 1000;
@@ -58,14 +74,20 @@ h1 {
     scale: 1 1;
   }
 }
-
 /* Header
 ===========*/
 .header {
+  /* position: fixed;
+  z-index: 1000;
+  background-color: #fff; */
+  width: 100%;
+  /* height: 10%; */
+  /* display: block; */
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0.5em 1em;
+  box-shadow: 0 10px 100px rgba(0, 0, 0, 0.1);
 }
 .brand {
   height: 48px;
@@ -127,6 +149,7 @@ nav {
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr;
   min-height: 90vh;
+  /* padding-top: 4rem; */
 }
 .hero-img {
   background-image: url("./assets/desktop-bg.jpg");
@@ -204,6 +227,9 @@ section {
   .wrapper {
     padding: 2rem 4rem;
   }
+  .contact {
+    padding-bottom: 4rem;
+  }
   .card_group {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -235,22 +261,16 @@ section {
   text-decoration: underline;
 }
 .view-icon {
-  /* position: absolute; */
   display: inline-flex;
   inline-size: 100%;
   justify-content: space-around;
-  background-color: rgba(220, 220, 220, 0.2);
-  border-radius: 2rem;
-  color: #fff;
-  /* width: fit-content; */
-  margin: 0 auto;
-  padding: 1em 2em;
-  transform: translateY(150%);
-  transition: transform 750ms ease-in-out;
+  padding: 1em 0;
+  /* transform: translateY(150%);
+  transition: transform 750ms ease-in-out; */
 }
-.card-body:hover .view-icon {
+/* .card-body:hover .view-icon {
   transform: translateY(0%);
-}
+} */
 .view-icon > a {
   width: max-content;
   margin: 0 1em;
@@ -306,8 +326,6 @@ section {
   clear: both;
   display: block;
 }
-@media screen and (min-width: 768px) {
-}
 /* Footer 
 ============*/
 .footer {
@@ -334,4 +352,22 @@ section {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
   }
+}
+/* About Me 
+==============*/
+.about {
+  padding: 4em;
+}
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+}
+.skill {
+  background-color: rgba(220, 220, 220, 0.4);
+  color: rgba(0, 0, 0, 0.8);
+  font-size: small;
+  font-weight: 500;
+  margin: 0 1em 0.5em 0;
+  padding: 0.5em 1em;
+  border-radius: 0.25em;
 }
