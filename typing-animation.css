@@ -1,0 +1,66 @@
+:root {
+  --bg-color: #fff;
+  --typewriter-speed: 4s;
+}
+body {
+  margin: 0%;
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  align-items: center;
+  background: var(--bg-color);
+  font-family: "Source Sans Pro", monospace, sans-serif;
+}
+
+h1 {
+  font-size: clamp(1rem, 3vw + 1rem, 4rem);
+  /* font-size: 2rem; */
+  position: relative;
+  width: max-content;
+}
+
+h1::before,
+h1::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+h1::before {
+  /* background-color: teal; */
+  background: var(--bg-color);
+  animation: typewriter var(--typewriter-speed) steps(27) 1s forwards;
+}
+h1::after {
+  /* content: "_"; */
+  width: 0.125em;
+  background: black;
+  animation: typewriter var(--typewriter-speed) steps(27) 1s forwards,
+    blink 750ms steps(27) infinite;
+}
+
+.subtitle {
+  font-size: 2rem;
+  opacity: 0;
+  transform: translateY(3rem);
+  animation: fadeInUp 2s ease calc(var(--typewriter-speed) + 2s) forwards;
+}
+
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

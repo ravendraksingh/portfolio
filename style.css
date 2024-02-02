@@ -1,3 +1,14 @@
+:root {
+  --clr-card-bg-dark: #181823;
+  --clr-light-gray: #8491a0;
+  --clr-footer-bg: #181818;
+  --typewriter-speed: 3s;
+  --animation-bg: linear-gradient(
+    to right,
+    rgba(220, 220, 220, 0.4),
+    rgba(220, 220, 220, 0.7)
+  );
+}
 body,
 ul,
 li,
@@ -10,13 +21,6 @@ body {
   font-optical-sizing: auto;
   font-style: normal;
 }
-
-:root {
-  --clr-card-bg-dark: #181823;
-  --clr-light-gray: #8491a0;
-  --clr-footer-bg: #181818;
-}
-
 /* Typography
 ===============*/
 h1 {
@@ -42,7 +46,7 @@ h1 {
 .aboutme_list {
 }
 .aboutme_list > li {
-  margin-bottom: 2em;
+  margin-bottom: 3rem;
 }
 .heading_2 {
   font-size: 1.75rem;
@@ -54,6 +58,24 @@ h1 {
 }
 .list_with_left_padding > li {
   margin-left: 2em;
+}
+.tag {
+  /* background-color: #04c2c9; */
+  /* color: #fff; */
+  /* padding: .5em 1em; */
+  font-weight: 600;
+  margin-right: 1ch;
+  line-height: 2;
+}
+.inline_logo_img {
+  height: inherit;
+  max-height: 1.5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .aboutme_list > li {
+    margin-bottom: 4em;
+  }
 }
 /* Scroll Watcher
 ==================*/
@@ -77,12 +99,7 @@ h1 {
 /* Header
 ===========*/
 .header {
-  /* position: fixed;
-  z-index: 1000;
-  background-color: #fff; */
   width: 100%;
-  /* height: 10%; */
-  /* display: block; */
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -156,19 +173,73 @@ nav {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top right;
-  /* height: 100vh; */
 }
 .hero-text-box {
   display: grid;
   grid-template-columns: 1fr;
   align-items: center;
   text-align: center;
-  /* background-color: rgba(35, 35, 35, 0.5); */
+  /* background: var(--animation-bg); */
+  position: relative;
+}
+.animated-heading {
+  position: relative;
+  /* font-family: "Montserrat", monospace, sans-serif; */
+  font-family: "Source Sans Pro", monospace, sans-serif;
+  background: #ff0000;
   background: linear-gradient(
-    to right,
-    rgba(220, 220, 220, 0.4),
-    rgba(220, 220, 220, 0.7)
+    135deg,
+    #ff00d2,
+    #fed90f,
+    #00a2ff,
+    #09f1b8,
+    #ff00d2,
+    #fed90f,
+    #00a2ff,
+    #09f1b8
   );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 300% 300%;
+  animation: gradient 8s ease-in-out infinite;
+}
+@keyframes gradient {
+  0%,
+  20%,
+  40%,
+  60%,
+  80%,
+  100% {
+    background-position: 0% 50%;
+  }
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    background-position: 100% 50%;
+  }
+}
+.animated-heading::before,
+.animated-heading::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.animated-heading::before {
+  /* background-color: teal; */
+  /* background: rgba(220, 220, 220, .5); */
+  background: #fff;
+  animation: typewriter var(--typewriter-speed) steps(18) 1s forwards;
+}
+.animated-heading::after {
+  width: 0.125em;
+  background: black;
+  animation: typewriter var(--typewriter-speed) steps(18) 1s forwards,
+    blink 750ms steps(18) infinite;
 }
 
 @media screen and (min-width: 576px) {
@@ -183,10 +254,10 @@ nav {
     /* min-height: 80rem; */
   }
   .hero-text-box {
-    background-image: url("./assets/desktop-bg.jpg");
+    /* background-image: url("./assets/desktop-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top right;
+    background-position: top right; */
     text-align: left;
   }
   .hero-heading {
@@ -356,7 +427,6 @@ section {
 /* About Me 
 ==============*/
 .about {
-  padding: 4em;
 }
 .skills {
   display: flex;
@@ -370,4 +440,23 @@ section {
   margin: 0 1em 0.5em 0;
   padding: 0.5em 1em;
   border-radius: 0.25em;
+}
+
+/* Animations 
+=================*/
+@keyframes typewriter {
+  to {
+    left: 100%;
+  }
+}
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
