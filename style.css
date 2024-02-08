@@ -181,9 +181,8 @@ nav {
 }
 .animated-heading {
   position: relative;
-  /* font-family: "Montserrat", monospace, sans-serif; */
   font-family: "Source Sans Pro", monospace, sans-serif;
-  background: #ff0000;
+  /* background: #ff0000;
   background: linear-gradient(
     135deg,
     #ff00d2,
@@ -198,7 +197,7 @@ nav {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-size: 300% 300%;
-  animation: gradient 8s ease-in-out infinite;
+  animation: gradient 8s ease-in-out infinite; */
 }
 @keyframes gradient {
   0%,
