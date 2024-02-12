@@ -172,7 +172,7 @@ nav {
 }
 .hero-text-box {
   display: grid;
-  grid-template-columns:1fr;
+  grid-template-columns: 1fr;
   min-width: calc(400px + 2em);
   padding-inline: 1em;
   align-items: center;
@@ -182,6 +182,7 @@ nav {
 .animated-heading {
   position: relative;
   font-family: "Source Sans Pro", monospace, sans-serif;
+  /* background: var(--animation-bg); */
   /* background: #ff0000;
   background: linear-gradient(
     135deg,
@@ -259,6 +260,12 @@ nav {
   .hero-heading {
     padding-left: 2rem;
     max-width: 65%;
+  }
+  .animated-heading::before,
+  .animated-heading::after {
+    content: "";
+    background: transparent;
+    animation: none;
   }
 }
 @media screen and (min-width: 992px) {
